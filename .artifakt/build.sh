@@ -15,7 +15,8 @@ WORKDIR=/var/www/html/public
 
 env
 
-curl -sSLO https://github.com/artifakt-io/base-html/archive/refs/heads/${ARCHIVE_FILE}.tar.gz && \
+mkdir -p $WORKDIR
+curl -sSLO https://gitlab.com/djalal/static-page/-/archive/main/${ARCHIVE_FILE}.tar.gz && \
   tar -xzf ${ARCHIVE_FILE}.tar.gz -C /tmp && \
   mv /tmp/${ARCHIVE_FILE}/* ${WORKDIR} && \
   chown -R www-data:www-data ${WORKDIR} && \
